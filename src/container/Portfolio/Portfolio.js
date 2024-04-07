@@ -2,13 +2,13 @@ import React, { useRef } from 'react'
 import { isMobile } from '../../resources/utility'
 import cx from 'classnames'
 import Icon from '../../components/Icon/Icon'
-import ShowcaseBtn from './ShowcaseBtn'
+import ReadDetailBtn from './ReadDetailBtn'
 import './portfolio.scss'
 
 function Portfolio(props) {
   const videoRef = useRef()
-  const textClass = cx('portfolio-content-text', {
-    [props.textClass]: props.textClass
+  const companyClass = cx('portfolio-content-text', {
+    [props.companyClass]: props.companyClass
   })
   const titleClass = cx({
     [props.titleClass]: props.titleClass
@@ -22,18 +22,24 @@ function Portfolio(props) {
   return (
     <div className="portfolio">
       <div className="portfolio-content">
-        <p className={textClass}>{props.text}</p>
+        <p className={companyClass}>{props.company}</p>
         <div className={titleClass}>
           <h1 className="portfolio-content-title portfolio-pad-white portfolio-pad-white-active">
             {props.title}
           </h1>
+          <h6>
+            {props.subtitle}
+          </h6>
+          <p>
+            {props.description}
+          </p>
         </div>
-        <div className="portfolio-btn-position">
-          <ShowcaseBtn
+        {props.onClick && <div className="portfolio-btn-position">
+          <ReadDetailBtn
             className={props.btnClass}
             onClick={props.onClick}
           />
-        </div>
+        </div>}
       </div>
       <div
         className={colorClass}

@@ -3,65 +3,49 @@ import cx from 'classnames'
 import { useNavigate } from 'react-router-dom'
 import Area from '../../container/Area/Area'
 import Portfolio from '../../container/Portfolio/Portfolio'
-import tourRingImage from '../../assets/images/home/portfolio/iStaging-TourRing.jpg'
-import threeDDollHouseImage from '../../assets/images/home/portfolio/iStaging-3D-DollHouse.jpg'
-import nongDesignImage from '../../assets/images/home/portfolio/Nong-Design.jpg'
-import cnewsImage from '../../assets/images/home/portfolio/CNEWS.jpg'
-import homeIntegrationImage from '../../assets/images/home/portfolio/Home-Integration.jpg'
-import tourRingVideo from '../../assets/videos/tourring-preview-720.mp4'
-import threeDDollHouseVideo from '../../assets/videos/3ddollhouse-preview-720.mp4'
-import nongDesignVideo from '../../assets/videos/nong-design-preview-720.mp4'
-import homeIntegrationVideo from '../../assets/videos/home-i-preview-720.mp4'
-import cnewsVideo from '../../assets/videos/cnews-preview-720.mp4'
 import './third-area.scss'
 
 function ThirdArea (props) {
   const navigate = useNavigate()
   const experience = [{
-    text: 'iStaging',
-    title: 'TourRing',
-    image: tourRingImage,
-    video: tourRingVideo,
-    color: '#BBEA86',
+    company: 'Innova Solutions',
+    title: 'Senior Software Engineer',
+    subtitle: 'Jul 2021 - present',
+    description: 'JavaScript, React, Golang, AWS, Terraform, Newman, k6',
+    color: '#88c1ef',
     onClick: () => {
-      navigate('/tour-ring')
+      navigate('/innova-solutions')
     }
   }, {
-    text: 'iStaging',
-    title: '3D DollHouse',
-    image: threeDDollHouseImage,
-    video: threeDDollHouseVideo,
-    color: '#dac9ff',
-    onClick: () => {
-      navigate('/3d-dollhouse')
-    }
+    company: 'adGeek, Cyntelli',
+    title: 'Senior Frontend Developer',
+    subtitle: 'Jun 2019 - Jun 2021',
+    description: 'JavaScript, React, Vue, Cypress, Jest',
+    color: '#b488e0',
+    // onClick: () => {
+    //   navigate('/adgeek-cyntelli')
+    // }
   }, {
-    text: 'Nong Design',
-    title: 'Nong Design',
-    image: nongDesignImage,
-    video: nongDesignVideo,
-    color: '#ffe500',
-    onClick: () => {
-      window.open('https://nongdesign.site/')
-    }
+    company: 'iStaging',
+    title: 'Frontend Developer',
+    subtitle: 'Feb 2017 - Jun 2019',
+    description: 'JavaScript, React, Vue, Three.js, AFrame, Krpano, WebRTC, Agora, Firebase',
+    color: '#FAA8AE',
+    // onClick: () => {
+    //   navigate('/istaging')
+    // }
   }, {
-    text: 'Nong Design',
-    title: 'CNEWS',
-    image: cnewsImage,
-    video: cnewsVideo,
-    color: '#21D8DA',
-    onClick: () => {
-      window.open('https://cnews.com.tw/')
-    }
+    company: 'Nong Design',
+    title: 'Web Developer',
+    subtitle: 'May 2016 - Jan 2017',
+    description: 'Completed development of 9 customized websites and published them online',
+    color: '#bababa'
   }, {
-    text: 'Nong Design',
-    title: 'Home Integration',
-    image: homeIntegrationImage,
-    video: homeIntegrationVideo,
-    color: '#acacac',
-    onClick: () => {
-      window.open('http://home-i.com.tw/')
-    }
+    company: 'Wethink',
+    title: 'Software Engineer',
+    subtitle: 'Aug 2014 - Apr 2016',
+    description: 'Developed and maintained projects using JavaScript and AngularJS',
+    color: '#7c96a8',
   }]
 
   const startFrom = props.pageList.findIndex(page => page === 'portfolio')
@@ -75,13 +59,13 @@ function ThirdArea (props) {
         key={`ThirdArea${index}`}
         className={className}>
         <Portfolio
-          text={portfolio.text}
+          company={portfolio.company}
           title={portfolio.title}
-          image={portfolio.image}
-          video={portfolio.video}
+          subtitle={portfolio.subtitle}
+          description={portfolio.description}
           color={portfolio.color}
           onClick={portfolio.onClick}
-          textClass="third-area-frame-text"
+          companyClass="third-area-frame-text"
           titleClass="third-area-frame-title"
           btnClass="third-area-frame-btn"
           previewClass="third-area-frame-preview"

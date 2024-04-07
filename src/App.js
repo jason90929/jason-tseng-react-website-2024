@@ -2,8 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AppComponent from './container/AppComponent'
 import LogoLink from './container/Logo/LogoLink'
 import Home from './pages/Home/Home'
-import TourRing from './pages/TourRing/TourRing'
-import ThreeDDollhouse from './pages/ThreeDDollhouse/ThreeDDollhouse'
+import InnovaSolutions from './pages/InnovaSolutions/InnovaSolutions'
 import Footer from './container/Footer/Footer'
 
 function App() {
@@ -13,8 +12,7 @@ function App() {
         <LogoLink/>
         <Routes>
           <Route path="/" Component={Home}/>
-          <Route path="/tour-ring" Component={TourRing}/>
-          <Route path="/3d-dollhouse" Component={ThreeDDollhouse}/>
+          <Route path="/innova-solutions" Component={InnovaSolutions}/>
         </Routes>
         <Footer/>
       </AppComponent>

@@ -12,9 +12,9 @@
   z-index: 2;
   transform: translateX(100%);
   transition-property: transform;
-  transition-duration: .8s;
+  transition-duration: .6s;
   transition-timing-function: ease;
-  transition-delay: 3.2s;
+  transition-delay: 2s;
   pointer-events: none;
 
   &.aside-loaded {
@@ -34,7 +34,7 @@
   margin-bottom: 3em;
   padding: .75em;
   transition-property: transform;
-  transition-duration: .7s;
+  transition-duration: .5s;
   transition-timing-function: ease;
   transform-origin: right center;
 

@@ -7,7 +7,6 @@ import Header from '../../container/Header/Header'
 import Aside from '../../container/Aside/Aside'
 import HorizontalMove from '../../container/HorizontalMove/HorizontalMove'
 import Loading from '../../container/Loading/Loading'
-import { isMobile } from '../../resources/utility'
 import Main from '../../container/Main/Main'
 
 function Home(props) {
@@ -18,12 +17,6 @@ function Home(props) {
     imageContext.keys().forEach(key => {
       fp.push(imageContext(key))
     })
-    if (!isMobile) {
-      let videoContext = require.context('../../assets/videos', true, /\.mp4$/)
-      videoContext.keys().forEach(key => {
-        fp.push(videoContext(key))
-      })
-    }
     setFilePaths(fp)
   }, [])
 
