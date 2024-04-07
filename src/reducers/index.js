@@ -10,6 +10,5 @@ const rootReducer = () => ({
 const preloadedState = {};
 export const store = configureStore({
   reducer: rootReducer(),
-
   preloadedState
 });

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { useEffect, useState } from 'react'
 import FirstArea from './FirstArea'
 import SecondArea from './SecondArea'
 import ThirdArea from './ThirdArea'
@@ -10,52 +10,40 @@ import Loading from '../../container/Loading/Loading'
 import { isMobile } from '../../resources/utility'
 import Main from '../../container/Main/Main'
 
-class Home extends PureComponent {
-  constructor () {
-    super()
-
-    this.state = {
-      filePaths: []
-    }
-  }
-
-  componentWillMount () {
+function Home(props) {
+  const [filePaths, setFilePaths] = useState([])
+  useEffect(() => {
     let imageContext = require.context('../../assets/images/home', true, /\.(png|jpe?g|svg)$/)
-    const filePaths = []
+    const fp = []
     imageContext.keys().forEach(key => {
-      filePaths.push(imageContext(key))
+      fp.push(imageContext(key))
     })
     if (!isMobile) {
       let videoContext = require.context('../../assets/videos', true, /\.mp4$/)
       videoContext.keys().forEach(key => {
-        filePaths.push(videoContext(key))
+        fp.push(videoContext(key))
       })
     }
-    this.setState(prevState => ({
-      filePaths
-    }))
-  }
-  
-  render () {
-    console.log("render");
-    return [
-      <Loading
-        preloadData={this.state.filePaths}
-        key="Loading"/>,
-      <Header key="Header"/>,
-      <Aside key="Aside"/>,
-      <Main
-        className="main"
-        key="Main">
-        <HorizontalMove key="HorizontalMove">
-          <FirstArea/>
-          <SecondArea/>
-          <ThirdArea/>
-          <FourthArea/>
-        </HorizontalMove>
-      </Main>
-    ]
-  }
+    setFilePaths(fp)
+  }, [])
+
+  return [
+    <Loading
+      preloadData={filePaths}
+      key="Loading"/>,
+    <Header key="Header"/>,
+    <Aside key="Aside"/>,
+    <Main
+      className="main"
+      key="Main">
+      <HorizontalMove key="HorizontalMove">
+        <FirstArea/>
+        <SecondArea/>
+        <ThirdArea/>
+        <FourthArea/>
+      </HorizontalMove>
+    </Main>
+  ]
 }
 
 export default Home

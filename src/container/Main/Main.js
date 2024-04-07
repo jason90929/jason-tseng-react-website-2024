@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './main.scss'
 
-class Main extends Component {
-  render () {
-    return (
-      <main
-        ref="main"
-        className="main">
-        {this.props.children}
-      </main>
-    )
-  }
+function Main (props) {
+  return (
+    <main
+      className="main">
+      {props.children}
+    </main>
+  )
 }
 
 export default Main

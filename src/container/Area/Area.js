@@ -1,68 +1,45 @@
-import React, { Component } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Background from '../Background/Background'
 import FullCenter from '../../components/FullCenter/FullCenter'
 import './area.scss'
 
-class Area extends Component {
-  static defaultProps = {
-    className: ''
-  }
-
-  static propTypes = {
-    className: PropTypes.string
-  }
-  
-  constructor () {
-    super()
-    this.onScroll = this.onScroll.bind(this)
-  }
-
-  componentDidMount () {
-    const areaEl = this.refs.area
-    if (areaEl) {
-      areaEl.addEventListener('scroll', this.onScroll)
+function Area(props) {
+  const areaEl = useRef(null)
+  useEffect(() => {
+    const element = areaEl.current
+    if (element) {
+      element.addEventListener('scroll', onScroll)
     }
-    // window.setTimeout(() => {
-    //   this.props.setPage(1)
-    // }, 3000)
-  }
 
-  componentWillUnmount () {
-    const areaEl = this.refs.area
-    if (areaEl) {
-      areaEl.removeEventListener('scroll', this.onScroll)
+    return () => {
+      if (element) {
+        element.removeEventListener('scroll', onScroll)
+      }
     }
-  }
+  }, [areaEl])
 
-  onScroll (event) {
+  const onScroll = function (event) {
     // on scrolling...
   }
 
-  getElement () {
-    return this.refs.area
-  }
-
-  render () {
-    const className = cx('area', {
-      [this.props.className]: this.props.className
-    })
-    return (
-      <FullCenter className="loading">
-        <Background
-          lineActive={this.props.isLoaded}
-          key="Background"
-        />
-        <section
-          ref="area"
-          className={className}>
-          {this.props.children}
-        </section>
-      </FullCenter>
-    )
-  }
+  const className = cx('area', {
+    [props.className]: props.className
+  })
+  return (
+    <FullCenter className="loading">
+      <Background
+        lineActive={props.isLoaded}
+        key="Background"
+      />
+      <section
+        ref={areaEl}
+        className={className}>
+        {props.children}
+      </section>
+    </FullCenter>
+  )
 }
 
 const mapStateToProps = (state, ownProps) => {

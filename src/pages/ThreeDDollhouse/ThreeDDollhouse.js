@@ -22,7 +22,7 @@ class ThreeDDollhouse extends PureComponent {
     }
   }
 
-  componentWillMount () {
+  componentDidMount () {
     let imageContext = require.context('../../assets/images/3d-dollhouse', true, /\.(png|jpe?g|svg)$/)
     const filePaths = []
     imageContext.keys().forEach(key => {
