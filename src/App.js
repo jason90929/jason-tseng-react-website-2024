@@ -1,4 +1,4 @@
-import { Router, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AppComponent from './container/AppComponent'
 import LogoLink from './container/Logo/LogoLink'
 import Home from './pages/Home/Home'
@@ -8,15 +8,17 @@ import Footer from './container/Footer/Footer'
 
 function App() {
   return (
-    <Router history={this.props.history}>
+    <BrowserRouter>
       <AppComponent>
         <LogoLink/>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/tour-ring" component={TourRing}/>
-        <Route exact path="/3d-dollhouse" component={ThreeDDollhouse}/>
+        <Routes>
+          <Route path="/" Component={Home}/>
+          <Route path="/tour-ring" Component={TourRing}/>
+          <Route path="/3d-dollhouse" Component={ThreeDDollhouse}/>
+        </Routes>
         <Footer/>
       </AppComponent>
-    </Router>
+    </BrowserRouter>
   );
 }
 

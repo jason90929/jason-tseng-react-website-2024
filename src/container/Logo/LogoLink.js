@@ -1,62 +1,56 @@
-import React, { Component } from 'react'
-import history from '../../history'
+import React from 'react'
 import { connect } from 'react-redux'
 import pagination from '../../actions/pagination'
 import Icon from '../../components/Icon/Icon'
 import Logo from './Logo'
 import logoJOrange from '../../assets/images/home/logo/j-without-bg-orange.png'
 import './logo-link.scss'
+import { useNavigate } from 'react-router-dom'
 
-class LogoLink extends Component {
-  constructor () {
-    super()
-    this.toHomePage = this.toHomePage.bind(this)
+function LogoLink (props) {
+  const navigate = useNavigate()
+  const toHomePage = () => {
+    const homePage = props.pageList.findIndex(page => page === 'home')
+    props.setPage(homePage)
+    navigate('/')
   }
 
-  toHomePage () {
-    const homePage = this.props.pageList.findIndex(page => page === 'home')
-    this.props.setPage(homePage)
-    history.push('/')
+  let className = 'logo-link'
+  let logoBgClass = 'logo-pulse-effect'
+  let logoJClass = 'logo-j-rotate-effect'
+  let logoJOrangeClass = 'load-progress logo-j-rotate-effect'
+  let clipPath = ''
+  if (props.isLoaded) {
+    className += ' logo-link-to-corner'
+    logoJOrangeClass += ' load-progress-finished'
+    logoBgClass = ''
+    logoJClass = ''
+  } else {
+    const progress = (props.currentLoading / props.maxLoading) * 100
+    clipPath = `polygon(0 100%, 100% 100%, 100% ${100 - progress}%, 0 ${100 - progress}%)`
   }
-
-  render () {
-    let className = 'logo-link'
-    let logoBgClass = 'logo-pulse-effect'
-    let logoJClass = 'logo-j-rotate-effect'
-    let logoJOrangeClass = 'load-progress logo-j-rotate-effect'
-    let clipPath = ''
-    if (this.props.isLoaded) {
-      className += ' logo-link-to-corner'
-      logoJOrangeClass += ' load-progress-finished'
-      logoBgClass = ''
-      logoJClass = ''
-    } else {
-      const progress = (this.props.currentLoading / this.props.maxLoading) * 100
-      clipPath = `polygon(0 100%, 100% 100%, 100% ${100 - progress}%, 0 ${100 - progress}%)`
-    }
-    return (
-      <a // eslint-disable-line
-        className={className}
-        role="button"
-        onClick={this.toHomePage}>
-        <Logo
-          logoBgClass={logoBgClass}
-          logoJClass={logoJClass}
-          size="144px">
-          <Icon
-            className={logoJOrangeClass}
-            style={{
-              WebkitClipPath: clipPath,
-              clipPath
-            }}
-            width="144px"
-            height="144px"
-            image={logoJOrange}
-          />
-        </Logo>
-      </a>
-    )
-  }
+  return (
+    <a // eslint-disable-line
+      className={className}
+      role="button"
+      onClick={toHomePage}>
+      <Logo
+        logoBgClass={logoBgClass}
+        logoJClass={logoJClass}
+        size="144px">
+        <Icon
+          className={logoJOrangeClass}
+          style={{
+            WebkitClipPath: clipPath,
+            clipPath
+          }}
+          width="144px"
+          height="144px"
+          image={logoJOrange}
+        />
+      </Logo>
+    </a>
+  )
 }
 
 const mapStateToProps = (state, ownProps) => {

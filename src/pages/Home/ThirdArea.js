@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import cx from 'classnames'
-import history from '../../history'
+import { useNavigate } from 'react-router-dom'
 import Area from '../../container/Area/Area'
 import Portfolio from '../../container/Portfolio/Portfolio'
 import tourRingImage from '../../assets/images/home/portfolio/iStaging-TourRing.jpg'
@@ -16,8 +16,9 @@ import homeIntegrationVideo from '../../assets/videos/home-i-preview-720.mp4'
 import cnewsVideo from '../../assets/videos/cnews-preview-720.mp4'
 import './third-area.scss'
 
-class ThirdArea extends Component {
-  state = {
+function ThirdArea (props) {
+  const navigate = useNavigate()
+  const state = {
     portfolio: [{
       text: 'iStaging',
       title: 'TourRing',
@@ -25,7 +26,7 @@ class ThirdArea extends Component {
       video: tourRingVideo,
       color: '#BBEA86',
       onClick: () => {
-        history.push('/tour-ring')
+        navigate('/tour-ring')
       }
     }, {
       text: 'iStaging',
@@ -34,7 +35,7 @@ class ThirdArea extends Component {
       video: threeDDollHouseVideo,
       color: '#dac9ff',
       onClick: () => {
-        history.push('/3d-dollhouse')
+        navigate('/3d-dollhouse')
       }
     }, {
       text: 'Nong Design',
@@ -66,34 +67,32 @@ class ThirdArea extends Component {
     }]
   }
 
-  render () {
-    const startFrom = this.props.pageList.findIndex(page => page === 'portfolio')
-    const shouldLoaded = this.props.isLoaded && this.props.pageList[this.props.currentPage] === 'portfolio'
-    return this.state.portfolio.map((portfolio, index) => {
-      const className = cx('third-area', {
-        'area-loaded': shouldLoaded && this.props.currentPage - startFrom === index
-      })
-      return (
-        <Area
-          key={`ThirdArea${index}`}
-          className={className}>
-          <Portfolio
-            text={portfolio.text}
-            title={portfolio.title}
-            image={portfolio.image}
-            video={portfolio.video}
-            color={portfolio.color}
-            onClick={portfolio.onClick}
-            textClass="third-area-frame-text"
-            titleClass="third-area-frame-title"
-            btnClass="third-area-frame-btn"
-            previewClass="third-area-frame-preview"
-            colorClass="third-area-frame-color">
-          </Portfolio>
-        </Area>
-      )
+  const startFrom = props.pageList.findIndex(page => page === 'portfolio')
+  const shouldLoaded = props.isLoaded && props.pageList[props.currentPage] === 'portfolio'
+  return state.portfolio.map((portfolio, index) => {
+    const className = cx('third-area', {
+      'area-loaded': shouldLoaded && props.currentPage - startFrom === index
     })
-  }
+    return (
+      <Area
+        key={`ThirdArea${index}`}
+        className={className}>
+        <Portfolio
+          text={portfolio.text}
+          title={portfolio.title}
+          image={portfolio.image}
+          video={portfolio.video}
+          color={portfolio.color}
+          onClick={portfolio.onClick}
+          textClass="third-area-frame-text"
+          titleClass="third-area-frame-title"
+          btnClass="third-area-frame-btn"
+          previewClass="third-area-frame-preview"
+          colorClass="third-area-frame-color">
+        </Portfolio>
+      </Area>
+    )
+  })
 }
 
 const mapStateToProps = (state, ownProps) => {

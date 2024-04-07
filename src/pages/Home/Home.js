@@ -35,8 +35,9 @@ class Home extends PureComponent {
       filePaths
     }))
   }
-
+  
   render () {
+    console.log("render");
     return [
       <Loading
         preloadData={this.state.filePaths}
