@@ -72,8 +72,7 @@ function HorizontalMove(props) {
     if (rootEl) {
       if (!isMobile) {
         window.addEventListener('keydown', onKeydown)
-        rootEl.addEventListener('mousewheel', onMousewheel)
-        rootEl.addEventListener('DOMMouseScroll', onMousewheel)
+        rootEl.addEventListener('wheel', onMousewheel)
       } else  {
         rootEl.addEventListener('touchstart', onTouchstart)
         rootEl.addEventListener('touchmove', onTouchmove)
@@ -84,8 +83,7 @@ function HorizontalMove(props) {
       if (rootEl) {
         if (!isMobile) {
           window.removeEventListener('keydown', onKeydown)
-          rootEl.removeEventListener('mousewheel', onMousewheel)
-          rootEl.removeEventListener('DOMMouseScroll', onMousewheel)
+          rootEl.removeEventListener('wheel', onMousewheel)
         } else {
           rootEl.removeEventListener('touchstart', onTouchstart)
           rootEl.removeEventListener('touchmove', onTouchmove)

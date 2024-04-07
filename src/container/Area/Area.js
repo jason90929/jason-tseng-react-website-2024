@@ -6,9 +6,9 @@ import FullCenter from '../../components/FullCenter/FullCenter'
 import './area.scss'
 
 function Area(props) {
-  const areaEl = useRef(null)
+  const areaRef = useRef(null)
   useEffect(() => {
-    const element = areaEl.current
+    const element = areaRef.current
     if (element) {
       element.addEventListener('scroll', onScroll)
     }
@@ -18,7 +18,7 @@ function Area(props) {
         element.removeEventListener('scroll', onScroll)
       }
     }
-  }, [areaEl])
+  }, [])
 
   const onScroll = function (event) {
     // on scrolling...
@@ -34,7 +34,7 @@ function Area(props) {
         key="Background"
       />
       <section
-        ref={areaEl}
+        ref={areaRef}
         className={className}>
         {props.children}
       </section>

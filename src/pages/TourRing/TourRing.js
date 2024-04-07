@@ -16,8 +16,8 @@ import lectureRoomMobileImage from '../../assets/images/tour-ring/lecture-room-m
 import virtualTourImage from '../../assets/images/tour-ring/virtual-tour.jpg'
 import virtualTourMobileImage from '../../assets/images/tour-ring/virtual-tour-mobile.jpg'
 // import landingPageMobileImage from './img/landing-page-mobile.jpg'
-import './tour-ring.scss'
 import PortfolioSwitcher from '../../container/PortfolioSwitcher/PortfolioSwitcher'
+import './tour-ring.scss'
 
 function TourRing(props) {
     const [filePaths, setFilePaths] = useState([])

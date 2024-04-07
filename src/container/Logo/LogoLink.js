@@ -20,7 +20,6 @@ function LogoLink (props) {
   let logoJClass = 'logo-j-rotate-effect'
   let logoJOrangeClass = 'load-progress logo-j-rotate-effect'
   let clipPath = ''
-  console.log('props', props);
   if (props.isLoaded) {
     className += ' logo-link-to-corner'
     logoJOrangeClass += ' load-progress-finished'
