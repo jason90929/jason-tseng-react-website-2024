@@ -1,10 +1,7 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 
-class AppComponent extends React.Component {
-  render () {
-    return this.props.children
-  }
+function AppComponent(props) {
+  return props.children
 }
 
 AppComponent.propTypes = {

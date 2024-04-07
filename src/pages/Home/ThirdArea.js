@@ -1,4 +1,3 @@
-import React from 'react'
 import { connect } from 'react-redux'
 import cx from 'classnames'
 import { useNavigate } from 'react-router-dom'
@@ -18,58 +17,56 @@ import './third-area.scss'
 
 function ThirdArea (props) {
   const navigate = useNavigate()
-  const state = {
-    portfolio: [{
-      text: 'iStaging',
-      title: 'TourRing',
-      image: tourRingImage,
-      video: tourRingVideo,
-      color: '#BBEA86',
-      onClick: () => {
-        navigate('/tour-ring')
-      }
-    }, {
-      text: 'iStaging',
-      title: '3D DollHouse',
-      image: threeDDollHouseImage,
-      video: threeDDollHouseVideo,
-      color: '#dac9ff',
-      onClick: () => {
-        navigate('/3d-dollhouse')
-      }
-    }, {
-      text: 'Nong Design',
-      title: 'Nong Design',
-      image: nongDesignImage,
-      video: nongDesignVideo,
-      color: '#ffe500',
-      onClick: () => {
-        window.open('https://nongdesign.site/')
-      }
-    }, {
-      text: 'Nong Design',
-      title: 'CNEWS',
-      image: cnewsImage,
-      video: cnewsVideo,
-      color: '#21D8DA',
-      onClick: () => {
-        window.open('https://cnews.com.tw/')
-      }
-    }, {
-      text: 'Nong Design',
-      title: 'Home Integration',
-      image: homeIntegrationImage,
-      video: homeIntegrationVideo,
-      color: '#acacac',
-      onClick: () => {
-        window.open('http://home-i.com.tw/')
-      }
-    }]
-  }
+  const experience = [{
+    text: 'iStaging',
+    title: 'TourRing',
+    image: tourRingImage,
+    video: tourRingVideo,
+    color: '#BBEA86',
+    onClick: () => {
+      navigate('/tour-ring')
+    }
+  }, {
+    text: 'iStaging',
+    title: '3D DollHouse',
+    image: threeDDollHouseImage,
+    video: threeDDollHouseVideo,
+    color: '#dac9ff',
+    onClick: () => {
+      navigate('/3d-dollhouse')
+    }
+  }, {
+    text: 'Nong Design',
+    title: 'Nong Design',
+    image: nongDesignImage,
+    video: nongDesignVideo,
+    color: '#ffe500',
+    onClick: () => {
+      window.open('https://nongdesign.site/')
+    }
+  }, {
+    text: 'Nong Design',
+    title: 'CNEWS',
+    image: cnewsImage,
+    video: cnewsVideo,
+    color: '#21D8DA',
+    onClick: () => {
+      window.open('https://cnews.com.tw/')
+    }
+  }, {
+    text: 'Nong Design',
+    title: 'Home Integration',
+    image: homeIntegrationImage,
+    video: homeIntegrationVideo,
+    color: '#acacac',
+    onClick: () => {
+      window.open('http://home-i.com.tw/')
+    }
+  }]
 
   const startFrom = props.pageList.findIndex(page => page === 'portfolio')
   const shouldLoaded = props.isLoaded && props.pageList[props.currentPage] === 'portfolio'
-  return state.portfolio.map((portfolio, index) => {
+  return experience.map((portfolio, index) => {
     const className = cx('third-area', {
       'area-loaded': shouldLoaded && props.currentPage - startFrom === index
     })

@@ -1,15 +1,11 @@
-import React, { PureComponent } from 'react'
-
-class Email extends PureComponent {
-  render () {
-    return (
-      <a
-        className="email"
-        href="mailto:tsaistorm@gmail.com">
-        tsaistorm@gmail.com
-      </a>
-    )
-  }
+function Email() {
+  return (
+    <a
+      className="email"
+      href="mailto:chih-hao.tseng@proton.me">
+      chih-hao.tseng@proton.me
+    </a>
+  )
 }
 
 export default Email

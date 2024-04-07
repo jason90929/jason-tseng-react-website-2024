@@ -17,7 +17,7 @@ class FirstArea extends Component {
           It's nice to see you here.
         </h1>
         <p className="first-area-text first-area-frame-2">
-          I make a good project structure and smooth website developing.
+          I'm Senior Software Engineer with 9+ years in software development.
         </p>
       </Area>
     )

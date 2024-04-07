@@ -1,4 +1,3 @@
-import React from 'react'
 import { connect } from 'react-redux'
 import pagination from '../../actions/pagination'
 import Icon from '../../components/Icon/Icon'
