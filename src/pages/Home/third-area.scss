@@ -1,0 +1,97 @@
+.third-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.third-area-frame-btn,
+.third-area-frame-preview {
+  opacity: 0;
+  transform: translateX(1.5em);
+  transition-property: transform, opacity;
+  transition-duration: .75s;
+  transition-timing-function: ease;
+}
+
+.third-area-frame-text,
+.third-area-frame-title {
+  @extend %brush-effect;
+}
+
+$brush-timing-function: cubic-bezier(.5, .9, .7, 1);
+.third-area-frame-color {
+  animation-duration: .8s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: .4s;
+  animation-timing-function: $brush-timing-function;
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+
+.area-loaded {
+  .third-area-frame-btn,
+  .third-area-frame-preview {
+    opacity: 1;
+    transform: none;
+  }
+
+  .third-area-frame-text ,
+  .third-area-frame-title {
+    @extend %brush-effect-active;
+  }
+
+  .third-area-frame-color {
+    animation-name: color-block-in;
+
+    @keyframes color-block-in {
+      0% {
+        -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+      }
+      25% {
+        -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 66%, 0 85%);
+        clip-path: polygon(0 100%, 100% 100%, 100% 75%, 0 50%);
+      }
+      50% {
+        -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 33%, 0 60%);
+        clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 25%);
+      }
+      100% {
+        -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+      }
+    }
+  }
+
+  .third-area-frame-preview {
+    transition-delay: .6s;
+  }
+
+  .third-area-frame-text {
+    transition-delay: 1.2s;
+  }
+
+  .third-area-frame-title {
+    transition-delay: 1.6s;
+  }
+
+  .third-area-frame-btn {
+    transition-delay: 2.2s;
+  }
+}
+
+$brush-timing-function: cubic-bezier(.5, .9, .7, 1);
+%brush-effect {
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: -webkit-clip-path .85s $brush-timing-function, clip-path .85s $brush-timing-function;
+  pointer-events: none;
+}
+
+%brush-effect-active {
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  pointer-events: auto;
+}

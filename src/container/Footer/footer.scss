@@ -1,0 +1,57 @@
+.footer {
+  position: fixed;
+  -webkit-backface-visibility: hidden;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+
+  > * {
+    pointer-events: auto;
+  }
+
+  .email {
+    font-family: 'Helvetica', 'Microsoft JhengHei', 'Microsoft YaHei', 'sans-serif';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-weight: bold;
+    color: #000;
+    overflow: hidden;
+    transform: translateX(-100%) translateX(-1.625em);
+    transition-property: transform;
+    transition-duration: .7s;
+    transition-timing-function: ease;
+    transition-delay: 3s;
+    margin: .625em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #d1d1d1;
+      transform: none;
+      transition-property: transform;
+      transition-duration: .6s;
+      transition-timing-function: ease;
+      transition-delay: 3.8s;
+    }
+
+    @media (min-width: 768px) {
+      margin: 1.625em;
+    }
+  }
+
+  &.footer-loaded {
+    .email {
+      transform: none;
+
+      &::after {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

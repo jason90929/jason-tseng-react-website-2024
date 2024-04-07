@@ -1,0 +1,45 @@
+.first-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.first-area-title {
+  font-weight: bold;
+  font-size: 1.75em;
+
+  @media (min-width: 768px) {
+    font-size: 2.725em;
+    line-height: 1.2em;
+  }
+}
+
+.first-area-text {
+  margin: 1.25em 0;
+}
+
+.first-area-frame-1,
+.first-area-frame-2 {
+  opacity: 0;
+  transform: translateX(1.5em);
+  transition-property: transform, opacity;
+  transition-duration: .75s;
+  transition-timing-function: ease;
+}
+
+.area-loaded {
+  .first-area-frame-1,
+  .first-area-frame-2 {
+    opacity: 1;
+    transform: none;
+  }
+
+  .first-area-frame-1 {
+    transition-delay: .6s;
+  }
+
+  .first-area-frame-2 {
+    transition-delay: 1s;
+  }
+}

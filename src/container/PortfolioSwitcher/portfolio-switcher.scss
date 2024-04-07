@@ -1,0 +1,15 @@
+.portfolio-switcher {
+  height: 23em;
+  width: 100%;
+  overflow: hidden;
+}
+
+.portfolio-switcher-inner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: inherit;
+  width: inherit;
+  background-color: #ffb2b3;
+}

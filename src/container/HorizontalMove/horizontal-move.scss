@@ -1,0 +1,59 @@
+.horizontal-move {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.horizontal-move-inner {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  transition: transform .9s cubic-bezier(0.81, 0.23, 0.05, 1);
+
+  > * {
+    flex-shrink: 0;
+  }
+
+  &.horizontal-move-inner-sliding {
+    will-change: transform;
+
+    .first-area-frame-1,
+    .first-area-frame-2,
+    .first-area-frame-3,
+    .first-area-frame-4,
+    .first-area-frame-5,
+    .first-area-frame-6,
+    .second-area-frame-1,
+    .second-area-frame-2,
+    .second-area-frame-3,
+    .second-area-frame-4,
+    .second-area-frame-5,
+    .second-area-frame-6,
+    .second-area-frame-7,
+    .third-area-frame-btn,
+    .third-area-frame-preview,
+    .fourth-area-frame-1,
+    .fourth-area-frame-2,
+    .fourth-area-frame-3,
+    .fourth-area-frame-4,
+    .fourth-area-frame-5,
+    .fourth-area-frame-6 {
+      will-change: transform, opacity;
+    }
+
+    .third-area-frame-text,
+    .third-area-frame-title,
+    .third-area-frame-color {
+      will-change: -webkit-clip-path, clip-path;
+    }
+
+    .about-color-block {
+      &::before {
+        will-change: -webkit-clip-path, clip-path;
+      }
+    }
+  }
+}

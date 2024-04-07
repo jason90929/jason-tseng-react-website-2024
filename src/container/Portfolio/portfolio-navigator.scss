@@ -1,0 +1,125 @@
+.portfolio-navigator {
+  position: absolute;
+  bottom: .5em;
+  right: .8em;
+  font-size: 1.1em;
+  font-weight: bold;
+  width: 1.6em;
+  height: 2em;
+  z-index: 1;
+  transition-property: transform;
+  transition-duration: .5s;
+  transition-timing-function: ease;
+  transform: translateX(200%);
+
+  &.portfolio-navigator-active {
+    transform: none;
+    transition-delay: 2.2s;
+
+    .divider {
+      &::before {
+        animation-name: divider-in;
+
+        @keyframes divider-in {
+          0% {
+            transform: translate(2000%, -50%) rotateZ(90deg) scaleY(2.5);
+          }
+          25% {
+            transform: translate(-50%, -50%) rotateZ(90deg) scaleY(1.25);
+          }
+          50% {
+            transform: translate(-50%, -50%) rotateZ(90deg);
+          }
+          100% {
+            transform: translate(-50%, -50%) rotateZ(45deg);
+          }
+        }
+      }
+    }
+
+    .current-count-inner,
+    .portfolio-count-inner {
+      transition-delay: 3s;
+      transform: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    bottom: 1em;
+    right: 1.6em;
+    font-size: 1.8em;
+    width: 1.6em;
+    height: 2.4em;
+  }
+}
+
+$size: 1.4em;
+.current-count-wrapper {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  //width: $size;
+  height: $size;
+  overflow: hidden;
+}
+
+.current-count-inside {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform .5s ease .9s;
+}
+
+.current-count {
+  display: flex;
+  //width: $size;
+  height: $size;
+  flex-shrink: 0;
+}
+
+.divider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0.1125em;
+    height: 1.4em;
+    background-color: #000000;
+    animation-duration: 1.6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 2.2s;
+    transform: translate(-50%, -50%) rotateZ(45deg);
+  }
+}
+
+.portfolio-count {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.portfolio-count-inner {
+  position: relative;
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 1s;
+  transform: translateY(-100%);
+}
+
+.current-count-inner {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 1s;
+  transform: translateY(100%);
+}

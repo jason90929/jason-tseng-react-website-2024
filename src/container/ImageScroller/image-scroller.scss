@@ -1,0 +1,126 @@
+$top: 109px;
+$left: 11px;
+$right: 11px;
+$bottom: 120px;
+$mobile-height: 568px;
+
+.image-scroller {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background-color: #ededed;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.image-scroller-mobile {
+    padding-bottom: 100%;
+
+    .image-scroller-bg {
+      margin: 0 auto;
+      width: auto;
+      height: auto;
+      top: 19%;
+      left: 24%;
+      right: 24%;
+      bottom: 21%;
+    }
+
+    @media (min-width: 768px) {
+      padding-bottom: $mobile-height;
+
+      .image-scroller-bg {
+        top: $top;
+        left: $left;
+        right: $right;
+        bottom: $bottom;
+        width: 320px - $left - $right;
+        padding-bottom: $mobile-height - $top - $bottom;
+      }
+    }
+  }
+}
+
+.image-scroller-mobile {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 90% 90%;
+    background-image: url('../../assets/images/portfolio/mobile-shell.svg');
+
+    @media (min-width: 768px) {
+      left: calc(50% - #{$mobile-height / 2});
+      right: auto;
+      width: $mobile-height;
+      height: $mobile-height;
+    }
+  }
+}
+
+$time: .9s;
+.image-scroller-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 0;
+  background-repeat: no-repeat;
+  transition-property: transform, opacity;
+  transition-duration: .6s;
+  transition-timing-function: ease-out;
+  transition-delay: .7s;
+}
+
+.image-scroller-color-block {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c7c2ff;
+  transition-property: transform;
+  transition-duration: $time;
+  transition-timing-function: cubic-bezier(.2, 1.01, .54, 1);
+}
+
+.image-scroller-move-out-to-bottom {
+  .image-scroller-bg {
+    transform: translateY(25px);
+    opacity: 0;
+    transition-delay: 0s;
+  }
+
+  .image-scroller-color-block {
+    transform: translateY(100%);
+  }
+}
+
+.image-scroller-move-out-to-top {
+  .image-scroller-bg {
+    transform: translateY(-25px);
+    opacity: 0;
+    transition-delay: 0s;
+  }
+
+  .image-scroller-color-block {
+    transform: translateY(-100%);
+  }
+}

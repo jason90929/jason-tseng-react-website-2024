@@ -1,0 +1,53 @@
+$bounce-timing-function: cubic-bezier(0, 1, .25, 1);
+$bounce-duration: .5s;
+
+.area {
+  position: relative;
+  display: flex;
+  padding: 0 16.67%;
+  width: 100%;
+  height: calc(100% - 8em);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: 768px) {
+    height: 100%;
+    overflow: visible;
+  }
+
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(.85);
+  transition: opacity $bounce-duration $bounce-timing-function,
+    visibility 0s $bounce-timing-function $bounce-duration,
+    transform $bounce-duration $bounce-timing-function;
+  pointer-events: none;
+
+  &.area-loaded {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity $bounce-duration $bounce-timing-function,
+      transform $bounce-duration $bounce-timing-function;
+    pointer-events: auto;
+  }
+}
+
+//.bounce-in {
+//  opacity: 0;
+//  visibility: hidden;
+//  transform: scale(.85);
+//  transition: opacity $bounce-duration $bounce-timing-function,
+//  visibility 0s $bounce-timing-function $bounce-duration,
+//  transform $bounce-duration $bounce-timing-function;
+//  pointer-events: none;
+//}
+//
+//.bounce-in-active {
+//  opacity: 1;
+//  visibility: visible;
+//  transform: scale(1);
+//  transition: opacity $bounce-duration $bounce-timing-function,
+//  transform $bounce-duration $bounce-timing-function;
+//  pointer-events: auto;
+//}

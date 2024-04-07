@@ -1,0 +1,107 @@
+$color1: #fff200;
+$color2: #019A54;
+$menu-hover-color1-spd: .6s;
+$menu-hover-color1-timing: cubic-bezier(0, 1, .5, 1);
+$menu-hover-color2-spd: 1s;
+$menu-hover-color2-delay-spd: .15s;
+$menu-hover-color2-timing: cubic-bezier(0, 1, .85, 1);
+$main-li-height: 80px;
+
+.double-color-hover-text-wrapper {
+  position: relative;
+  cursor: pointer;
+  font-size: 2em;
+  font-weight: bold;
+
+  &.hoverable {
+    &:hover {
+      // 顏色１遮罩進入
+      .double-color-hover-text-outer {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transition: $menu-hover-color1-spd $menu-hover-color1-timing;
+        transition: $menu-hover-color1-spd $menu-hover-color1-timing;
+      }
+
+      .double-color-hover-text-inner {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transition: $menu-hover-color1-spd $menu-hover-color1-timing;
+        transition: $menu-hover-color1-spd $menu-hover-color1-timing;
+      }
+
+      // 顏色２遮罩進入
+      .double-color-hover-text-outer-second {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transition: transform $menu-hover-color2-spd $menu-hover-color2-timing $menu-hover-color2-delay-spd;
+        transition: transform $menu-hover-color2-spd $menu-hover-color2-timing $menu-hover-color2-delay-spd;
+
+        .double-color-hover-text-inner {
+          -webkit-transition: transform $menu-hover-color2-spd $menu-hover-color2-timing $menu-hover-color2-delay-spd;
+          transition: transform $menu-hover-color2-spd $menu-hover-color2-timing $menu-hover-color2-delay-spd;
+        }
+      }
+    }
+  }
+}
+
+.double-color-hover-text--model {
+  position: absolute;
+}
+
+.double-color-hover-text--sizing {
+  visibility: hidden;
+}
+
+// 顏色１遮罩離開
+.double-color-hover-text-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: transform $menu-hover-color1-spd $menu-hover-color2-timing $menu-hover-color2-delay-spd;
+  transition: transform $menu-hover-color1-spd $menu-hover-color2-timing $menu-hover-color2-delay-spd;
+  pointer-events: none;
+
+  .double-color-hover-text-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: transform $menu-hover-color1-spd $menu-hover-color2-timing $menu-hover-color2-delay-spd;
+    transition: transform $menu-hover-color1-spd $menu-hover-color2-timing $menu-hover-color2-delay-spd;
+  }
+
+  .double-color-hover-text--mask {
+    color: $color1;
+  }
+}
+
+// 顏色２遮罩離開
+.double-color-hover-text-outer-second {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  overflow: hidden;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: transform $menu-hover-color2-spd $menu-hover-color1-timing;
+  transition: transform $menu-hover-color2-spd $menu-hover-color1-timing;
+  pointer-events: none;
+
+  .double-color-hover-text-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: transform $menu-hover-color2-spd $menu-hover-color1-timing;
+    transition: transform $menu-hover-color2-spd $menu-hover-color1-timing;
+  }
+
+  .double-color-hover-text--mask {
+    color: $color2;
+  }
+}

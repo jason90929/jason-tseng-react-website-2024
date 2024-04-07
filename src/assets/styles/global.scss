@@ -1,0 +1,72 @@
+html, body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  -moz-osx-font-smoothing: grayscale;
+  color: #303030;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', 'Microsoft JhengHei', 'Microsoft YaHei', 'sans-serif';
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li, figure {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.75em;
+}
+
+h2 {
+  font-size: 2.25em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 1.66em;
+}
+
+h6 {
+  font-size: 1.33em;
+}
+
+li {
+  list-style-type: none;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+a {
+  color: #777;
+
+  &:hover {
+    color: #303030;
+  }
+}
+
+.hide-pc {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+::-moz-selection {
+  background-color: #ffd74c;
+}
+
+::selection {
+  background-color: #ffd74c;
+}
