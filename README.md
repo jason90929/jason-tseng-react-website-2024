@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# 曾志豪(Tseng, Chih-hao) Jason Tseng [![GitHub](https://github.githubassets.com/favicons/favicon.png 'GitHub')](https://github.com/jason90929) [![LinkedIn](https://static.licdn.com/aero-v1/sc/h/8s162nmbcnfkg7a0k8nq9wwqo 'LinkedIn')](https://www.linkedin.com/in/jason90929/)
++886988300764 | chih-hao.tseng@proton.me
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### About me
+Experienced and results-oriented Software Engineer with 9+ years in software development. Proficient in Golang, Node.js, JavaScript, and React. Skilled in developing distributed architecture via Golang and AWS services with a focus on achieving production readiness, high test coverage. Adept at cross-team collaboration and knowledge sharing in diverse environments.
 
-## Available Scripts
+### Professional Experience
 
-In the project directory, you can run:
+#### Senior Software Engineer - *Innova Solutions | Jul 2021 - present*
+*Oct 2021 - Mar 2024 | RCMEE team*
+* Developed distributed architecture using Golang and AWS services
+* Successfully deployed 30+ projects to production ready stage
+* Implemented read/write-heavy supported solutions
+* Achieved 80% unit test coverage for all projects and included regression/load tests for API services
+* Implemented log pruning to meet HIPAA compliance on CloudWatch
+* Collaborated with team members across different timezones and accents
+* Helped in code reviews and testing of tickets to ensure performance and acceptance criteria were met
 
-### `npm start`
+*Jul 2021 - Oct 2021 | CIAM team*
+* Upgraded internal React UI components for a major update
+* Assisted team members in defining and discussing tickets and resolving technical issues
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Senior Frontend Engineer - *AdGeek, Cyntelli | Jun 2019 - Jun 2021*
+* Developed LINE Chatbot Editor with backend collaboration
+* Introduced React into AdGeek, replacing old Vue projects
+* Introduced and integrated unit testing and e2e testing for frontend projects
+* Collaborated with and mentored junior team members, shared knowledge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Frontend Developer - *iStaging | Feb 2017 - Jun 2019*
+* Developed TourRing product using Vue, WebRTC, and Firebase
+* Developed VR Viewer product with Vue and Node.js for content previewing
+* Developed VR Editor product using Vue, Firebase, and three.js
+* Participated in CES 2018 for industry insights and competition analysis
 
-### `npm test`
+#### Web Developer - *Nong Design | Apr 2016 - Jan 2017*
+* Completed development of 9 customized websites and published them online
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Software Engineer - *WeThink | Aug 2014 - Mar 2016*
+* Developed and maintained projects using JavaScript and AngularJS
 
-### `npm run build`
+### Skills
+* Golang, Node.js 
+* AWS Services, Terraform
+* Newman, k6
+* JavaScript, React, Vue, WebRTC, three.js
+* Jest, Cypress
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Academic Qualifications
+* National Taichung University of Science and Technology
+  * **Information Management** *2009 - 2013*
